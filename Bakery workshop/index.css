@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.title{
+    font-family: 'Moon Dance', cursive;
+    font-weight: 700;
+    font-size:xx-large;
+}
+
+#navbarSupportedContent > ul > li{
+    font-family: 'Baloo Bhai 2', cursive;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap CDN -->  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- google font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+    <!-- font awesome links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- local css link -->
+    <link rel="stylesheet" href="main.css">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+    <div class="toast" id="toast">
+        <p class="message" id="message"></p>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container">
+            <a href="./index.html" class="navbar-brand fs-2 fw-bolder">Bakeaano</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nevmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto fs-5">
+                    <li class="nav-item">
+                        <a href="#course" class="nav-link">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#aboutus" class="nav-link">AboutUs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./attendees.html" class="nav-link">Attendees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./register.html" class="nav-link">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./login.html" class="nav-link">login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home section -->
+    <section class="bg-light text-dark p-5 text-center">
+        <div class="container">
+            <div class="d-sm-flex justify-content-between align-items-center">
+                <div class="">
+                    <h5 class="text-start">Looking for Best Baking Workshops ??</h5>
+                    <h1 class="text-start">Become a <span class="text-warning">Professional Baker</span><br> in just
+                        3 months</h1>
+                    <div class="text-start mt-4">
+                        <button class="btn btn-lg me-3">Apply now</button>
+                        <button onclick="" class=" btn btn-lg">Explore courses</button>
+                    </div>
+                </div>
+                <div class=""><img src="./img/3.jpg" alt="" class="hero img-fluid d-none d-sm-block"></div>
+            </div>
+        </div>
+    </section>
+    <!-- cards -->
+    <section class="p-5 ">
+        <div>
+            <h1 class="text-center pb-5">Our Workshops</h2>
+        </div>
+        <div class="container">
+            <div id="cards-area" class="row">
+                <!-- Cards here -->
+
+            </div>
+        </div>
+    </section>
+    <!-- about us -->
+    <section class="aboutus py-5">
+        <div class="container">
+            <h2 class=" font-baloo text-center fs-1 pb-5">About Us</h2>
+            <div class="d-flex align-items-center">
+                <div class="font-baloo w-50">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor adipisci nulla voluptates eaque
+                        et nemo aperiam, harum quia explicabo optio consectetur, iste voluptate, animi a voluptatum
+                        consequuntur fugiat ea odio! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Perferendis, illo maxime, fugiat quisquam veniam ipsa ut molestias perspiciatis nostrum porro
+                        animi doloribus ipsam tempore aut nihil, quasi autem labore nesciunt. Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Doloribus quidem necessitatibus est harum, omnis aperiam hic.
+                        Optio maxime, sapiente dolor quos molestias quod iusto, nisi nulla enim nemo voluptates sit?
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque cumque, veniam molestiae odit
+                        debitis quas dolorem voluptatibus? Autem sint, illum quis commodi odio eveniet magni dolore
+                        omnis. Et, at officia.</p>
+                </div>
+                <img src="./img/4.jpg" alt="" class="card-img-top w-50 h-25">
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <section class="font-baloo  footer">
+        <div class="container d-flex py-5">
+            <div class="">
+                <div class="footer-div-title my-4">
+                    <h3>Get in touch</h3>
+                </div>
+                <div>About Us</div>
+                <div>Contact us</div>
+                <div>Privacy</div>
+            </div>
+            <div class=" footer-div">
+                <div class="footer-div-title  my-4">
+                    <h3>Our Courses</h3>
+                </div>
+                <div>Baker's Certification Course</div>
+                <div>Baker's diploma course</div>
+                <div>Home Baker's essentials</div>
+                <div>Cakes Certification</div>
+            </div>
+            <div class="footer-div">
+                <div class="footer-div-title  my-4">
+                    <h3>Contact Information</h3>
+                </div>
+                <div>Visit us at : First floor,metro station,144 A , <br>Lane Number 1, Rahman Road,<br> New delhi,
+                    Delhi
+                    !!0030</div>
+                <div>Call us at : 9876543210</div>
+                <div>Email us at: Bakeaana124@gmail.com</div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
