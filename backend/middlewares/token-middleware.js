@@ -5,6 +5,9 @@ function verifyTokenMiddleware(req, res, next) {
         let token = req.headers.authorization.split(" ")[1];
         // Verify the token
         jwt.verify(token, "secretkey", (err, userCred) => {
+            console.log("token");
+            console.log(userCred);
+            
             if(err === null) {
                 next();
             } else {

@@ -1,8 +1,10 @@
 function admin(req, res, next) {
-    if(req.user.role === 'admin') {
-        return next();
-    }
-    return res.redirect('/');
+    console.log(req.body);
+    
+    // if(req.body.role === 'admin') {
+    //     return next();
+    // }
+    // return res.json({message: "You are not authorized to access this route"});
 }
 
-module.exports = admin
+module.exports = admin;

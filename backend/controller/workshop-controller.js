@@ -43,6 +43,9 @@ function workshop() {
                 return;
             }
 
+            let learningsArray = learnings.split(',');
+            console.log(learningsArray);
+
             let workshopObj = new Workshop({
                 title: title,
                 description: description,
@@ -50,7 +53,7 @@ function workshop() {
                 address: address,
                 date: date,
                 duration: duration,
-                learnings: learnings,
+                learnings: learningsArray,
             });
             
             workshopObj.save()
@@ -64,7 +67,7 @@ function workshop() {
 
         async attendees(req, res) {
             const allAttendees = await Attendees.find().populate('user').populate('workshop');
-            // console.log(allAttendees);
+            console.log(allAttendees);
             if(allAttendees !== null) {
                 res.json({ attendees: allAttendees });
             } else {

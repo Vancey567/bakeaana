@@ -7,7 +7,7 @@ function userController() {
         async login(req, res) {
             const { email, password } = req.body;
             
-            if(!email, !password) {
+            if(!email || !password) {
                 return res.json({ message: 'All fields are mandatory' });
             }
 
@@ -18,6 +18,11 @@ function userController() {
                     if(status === true) { // Correct password
                             jwt.sign({ email, password }, "secretkey", (err, token) => {
                                 if(err === null) {
+                                    if (user.role === 'admin') {
+                                        console.log('admin');                                        
+                                    } else {
+                                        console.log('not admin');         
+                                    }
                                     res.send({user: user, token: token,}); 
                                 }
                             })
@@ -40,12 +45,9 @@ function userController() {
 
         async register(req, res) {
             let { name, gender, role, email, phone, dob, address, password } = req.body; 
-            console.log(req.method);
-            console.log(req.body);
 
             if(!name || !gender || !email || !phone || !dob || !address || !password) {
-                res.json({ message: 'All fields are mandatory' });
-                return;
+                return res.json({ message: 'All fields are mandatory' });
             }
 
             Users.findOne({ email: email }, (err, user) => {
@@ -67,6 +69,8 @@ function userController() {
                                     address: address,
                                     password: newpassword
                                 });
+                                console.log(userObj);
+                                
                                 
                                 userObj.save()
                                 .then(() => {
@@ -91,8 +95,7 @@ function userController() {
         },
 
         async logout(req, res) {
-            req.logout();
-            req.session.destroy();
+            
             return res.redirect('/login');
         },
     }

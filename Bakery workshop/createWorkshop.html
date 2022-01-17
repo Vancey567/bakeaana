@@ -25,7 +25,6 @@
 </head>
 
 <body>
-
     <div class="toaster" id="toast">
         <p class="message" id="message"></p>
     </div>
@@ -45,7 +44,7 @@
                         <a href="#course" class="nav-link">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#aboutus" class="nav-link">AboutUs</a>
+                        <a href="./attendees.html" class="nav-link">Attendees</a>
                     </li>
                     <li class="nav-item">
                         <a href="#instructor" class="nav-link">Instructors</a>
@@ -63,36 +62,38 @@
                     <img src="./img/5.jpg" alt="" class="reg-img img-fluid ">
                 </div>
                 <div class="col-lg-7 ">
-                    <h1 class="font-baloo mt-4 fw-4 fs-1 text-center">Register here</h1>
-                    <form action="" id="registerForm" class="mx-5">
-                        <label for=""></label>
+                    <h1 class="font-baloo mt-4 fw-4 fs-1 text-center">Create Workshop here</h1>
+                    <form id="workshopForm" action="" class="mx-5 registerForm">
                         <div class="form-row ">
-                            <input id="name" name="name" value="" type="text" placeholder=" Your Name" class="w-100 p-2">
+                            <input id="title" name="title" type="text" placeholder="Workshop Title" class="w-100 p-2">
                         </div>
                         <div class="form-row">
-                            <input id="email" name="email" value="" type="email" placeholder=" Your email Id" class="w-100 p-2">
+                            <input id="description" name="description" type="email" placeholder="Description" class="w-100 p-2">
                         </div>
                         <div class="d-flex justify-content-around">
                             <div class="form-row w-50">
-                                <input id="gender" name="gender" value="" type="text" placeholder="gender" class="gender p-2">
+                                <select name="mode" id="mode" class="gender p-2">
+                                    <option value="online">Online</option>
+                                    <option value="offline">Offline</option>
+                                    <option value="hybrid">Hybrid</option>
+                                </select>
+                                <!-- <input id="mode" name="mode" type="text" placeholder="gender" class="gender p-2"> -->
                             </div>
                             <div class="form-row w-50">
-                                <input id="dob" name="dob" value="" type="date" placeholder="DOB" class="age p-2 ms-2">
+                                <input id="date" name="date" type="date" placeholder="Workshop Date" class="age p-2 ms-2">
                             </div>
                         </div>
                         <div class="form-row">
-                            <input id="phone" name="phone" value="" type="number" placeholder="Your Phone number" class="w-100 p-2">
+                            <input id="address" name="address" type="text" placeholder="Address" class="w-100 p-2">
                         </div>
                         <div class="form-row">
-                            <input id="address" name="address" value="" type="text" placeholder="Address" class="w-100 p-2">
+                            <input id="duration" name="duration" type="text" placeholder="Duration" class="w-100 p-2">
                         </div>
                         <div class="form-row">
-                            <input id="password" name="password" type="password" value="pass" placeholder="password" class="w-100 p-2">
+                            <input id="learnings" name="learnings" type="text" placeholder="Learnings" class="w-100 p-2">
                         </div>
-                        <button onclick="registerUser()" type="button" class="btn btn-md btn-submit">Submit</button>
+                        <button onclick="createWorkshop()" type="button" class="btn btn-md btn-submit">Create Workshop</button>
                     </form>
-                    <h6 class="text-center mt-3">Already registered ? <a href="./login.html" class="text-danger"> Sign
-                            In</a></h6>
                 </div>
             </div>
         </div>
