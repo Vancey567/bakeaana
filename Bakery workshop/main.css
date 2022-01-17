@@ -207,6 +207,9 @@ table{
   margin-right: 120px;
 }
 
-.mode {
 
+/* Table */
+.atteendes {
+  background: #f8f9fa;
+  height: 100vh;
 }

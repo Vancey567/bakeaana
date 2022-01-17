@@ -15,9 +15,8 @@ router.get('/register', userController().getregisterPage);
 router.post('/register', userController().register);
 router.get('/workshop', workshopController().showWorkshop);
 router.get('/workshop', homeController().home);
-router.post('/workshop', verifyTokenMiddleware, admin, workshopController().createWorkshop);
-// router.post('/workshop/register', workshopController().register);
-router.get('/attendees',  verifyTokenMiddleware, admin, workshopController().attendees);
+router.post('/workshop', verifyTokenMiddleware, workshopController().createWorkshop);
+router.get('/attendees',  verifyTokenMiddleware, workshopController().attendees);
 router.post('/attendees', verifyTokenMiddleware, workshopController().registerAttendee);
 
 module.exports = router;

@@ -3,11 +3,11 @@ async function getWorkshopData() {
     const response = await fetch(api_url);
     const workshops = await response.json();
     display(workshops);
-    console.log(workshops);
 }
 
-window.onload = getWorkshopData();
 window.onload = () => {
+    getWorkshopData();
+
     const logoutBtn = document.getElementById('logoutBtn');
     const registerLog = document.getElementById('registerLog');
     const token = localStorage.getItem('token');
@@ -35,11 +35,9 @@ const getworkshopDate = (date) => {
 display = (workshops) => {
     let workshopString = "";
     workshops.workshops.map((workshop, index) => {    
-        // const workshopDate = getworkshopDate(workshop.date); 
         const splitDate = workshop.date.split("T");
         const workshopDate = splitDate[0];
         const workshopId = workshop._id;
-        console.log(workshopId);
         
         workshopString += `
             <div class="col-md">
@@ -64,9 +62,7 @@ display = (workshops) => {
     document.getElementById("cards-area").innerHTML = workshopString;
 }
 
-const registerAttendese = (workshopId) => {
-    console.log(workshopId);
-    
+const registerAttendese = (workshopId) => {   
     const loggedInUser = localStorage.getItem('user_id');
     const token = localStorage.getItem('token');
     const api_url = 'http://localhost:3000/attendees';
@@ -166,38 +162,37 @@ const loginUser = () => {
     })
 }
 
-const getAttendese = async () => {    
-    console.log("called");
-    const api_url = 'http://localhost:3000/attendees';
-    const token = localStorage.getItem('token');
-    const options = {
-        method: 'GET',
-        headers: {
-            "Authorization": 'Bearer ' + token
-        }
-    }
+// const getAttendese = async () => {    
+//     const api_url = 'http://localhost:3000/attendees';
+//     const token = localStorage.getItem('token');
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             "Authorization": 'Bearer ' + token
+//         }
+//     }
 
-    const attendeesResponse = await fetch(api_url, options);
-    const attendees = await attendeesResponse.json();
-    console.log(attendees);
+//     const attendeesResponse = await fetch(api_url, options);
+//     const attendees = await attendeesResponse.json();
+//     console.log(attendees);
     
-    let attendeeString = "";
+//     let attendeeString = "";
 
-    attendees.attendees.map((attendee) => {
-        attendeeString += `
-            <tr>
-                <th scope="row">${attendee.user._id}</th>
-                <td>${attendee.workshop._id}</td>
-                <td>${attendee.user.name}</td>
-                <td>${attendee.workshop.name}</td>
-                <td>${attendee.user.gender}</td>
-                <td>${attendee.user.phone}</td>
-                <td>${attendee.user.address}</td>
-            </tr>
-        `;
-    })
-    document.getElementById('attendee-area').innerHTML = attendeeString;
-}
+//     attendees.attendees.map((attendee) => {
+//         attendeeString += `
+//             <tr>
+//                 <th scope="row">${attendee.user._id}</th>
+//                 <td>${attendee.workshop._id}</td>
+//                 <td>${attendee.user.name}</td>
+//                 <td>${attendee.workshop.name}</td>
+//                 <td>${attendee.user.gender}</td>
+//                 <td>${attendee.user.phone}</td>
+//                 <td>${attendee.user.address}</td>
+//             </tr>
+//         `;
+//     })
+//     document.getElementById('attendee-area').innerHTML = attendeeString;
+// }
 
 const knowMore = async (req, res) => {
     console.log("knowmore");
@@ -271,7 +266,6 @@ const createWorkshop = async () => {
 }
 
 const logout = () => {
-    console.log("call");
     const logoutBtn = document.getElementById('logoutBtn');
     const log = document.getElementsByClassName('log');
 
@@ -282,9 +276,7 @@ const logout = () => {
     logoutBtn.style.display = 'none';
 }
 
-toast = (message) => {
-    console.log('totasrwe');
-    
+toast = (message) => {   
     document.getElementById('toast').style.display = "block";
     document.getElementById('message').innerText = message;
 

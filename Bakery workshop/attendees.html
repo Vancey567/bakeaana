@@ -25,25 +25,72 @@
 </head>
 
 <body onload="getAttendese()">
-    <h1 class="text-center mt-5">Attendees</h1>
-    <table class="table table-striped m-5">
-        <thead>
-            <tr>
-                <th scope="col">Attendee_id</th>
-                <th scope="col">Attendee's Name</th>
-                <th scope="col">Workshop_id</th>
-                <th scope="col">Workshop name</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Address</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr id="attendee-area">
-                
-            </tr>
-        </tbody>
-    </table>
+
+    <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container">
+            <a href="./index.html" class="navbar-brand fs-2 fw-bolder">Bakeaano</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nevmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto fs-5">
+                    <li class="nav-item">
+                        <a href="#course" class="nav-link">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#aboutus" class="nav-link">AboutUs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./attendees.html" class="nav-link">Attendees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./createWorkshop.html" class="nav-link">Workshop</a>
+                    </li>
+                    <div id="registerLog" class="nav-item">
+                        <li class="nav-item">
+                            <a href="./register.html" class="nav-link log">SignUp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./login.html" class="nav-link log">SignIn</a>
+                        </li>
+                    </div>       
+                    <li onclick="logout()" id="logoutBtn" class="nav-item">
+                        <a href="" id="logout" class="nav-link">logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="atteendes">
+        <div class="container">
+            <h2 class="text-left py-4">Attendees</h2>
+            <table class="my-1 table table-striped mr-5">
+                <thead>
+                    <tr>
+                        <th scope="col">Attendee_id</th>
+                        <th scope="col">Attendee's Name</th>
+                        <th scope="col">Workshop_id</th>
+                        <th scope="col">Enrolled In</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Address</th>
+                    </tr>
+                </thead>
+                <tbody id="attendee-area">
+                    <!-- <tr >
+                        
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+    
+
     <script>
         const getAttendese = async (req, res) => {    
                 const api_url = 'http://localhost:3000/attendees';
